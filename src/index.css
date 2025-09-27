@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Acıktım Café Design System - Warm, inviting colors for authentic Turkish café experience */
+
+@layer base {
+  :root {
+    /* Warm café color palette */
+    --background: 43 33% 98%;
+    --foreground: 25 25% 15%;
+
+    --card: 43 33% 98%;
+    --card-foreground: 25 25% 15%;
+
+    --popover: 43 33% 98%;
+    --popover-foreground: 25 25% 15%;
+
+    /* Primary: Rich terracotta */
+    --primary: 14 73% 60%;
+    --primary-foreground: 43 33% 98%;
+
+    /* Secondary: Warm cream */
+    --secondary: 43 33% 95%;
+    --secondary-foreground: 25 25% 15%;
+
+    /* Coffee brown accents */
+    --muted: 43 20% 90%;
+    --muted-foreground: 25 15% 45%;
+
+    --accent: 25 25% 50%;
+    --accent-foreground: 43 33% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 43 33% 98%;
+
+    --border: 43 20% 88%;
+    --input: 43 20% 88%;
+    --ring: 14 73% 60%;
+
+    --radius: 0.75rem;
+    
+    /* Custom café colors */
+    --cafe-terracotta: 14 73% 60%;
+    --cafe-cream: 43 33% 96%;
+    --cafe-brown: 25 25% 30%;
+    --cafe-warm: 35 45% 85%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--cafe-terracotta)) 0%, hsl(25 50% 55%) 100%);
+    --gradient-warm: linear-gradient(180deg, hsl(var(--cafe-cream)) 0%, hsl(var(--cafe-warm)) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 6px -1px hsl(var(--cafe-brown) / 0.1);
+    --shadow-medium: 0 10px 15px -3px hsl(var(--cafe-brown) / 0.1);
+    --shadow-large: 0 25px 50px -12px hsl(var(--cafe-brown) / 0.25);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 25 25% 8%;
+    --foreground: 43 33% 95%;
+
+    --card: 25 25% 10%;
+    --card-foreground: 43 33% 95%;
+
+    --popover: 25 25% 10%;
+    --popover-foreground: 43 33% 95%;
+
+    --primary: 14 73% 65%;
+    --primary-foreground: 25 25% 8%;
+
+    --secondary: 25 15% 15%;
+    --secondary-foreground: 43 33% 95%;
+
+    --muted: 25 15% 15%;
+    --muted-foreground: 43 15% 65%;
+
+    --accent: 14 50% 45%;
+    --accent-foreground: 43 33% 95%;
+
+    --destructive: 0 62.8% 50.6%;
+    --destructive-foreground: 43 33% 95%;
+
+    --border: 25 15% 18%;
+    --input: 25 15% 18%;
+    --ring: 14 73% 65%;
+    
+    --cafe-terracotta: 14 73% 65%;
+    --cafe-cream: 25 25% 12%;
+    --cafe-brown: 43 15% 85%;
+    --cafe-warm: 25 20% 20%;
+    
+    --gradient-hero: linear-gradient(135deg, hsl(var(--cafe-terracotta)) 0%, hsl(25 50% 35%) 100%);
+    --gradient-warm: linear-gradient(180deg, hsl(var(--cafe-cream)) 0%, hsl(var(--cafe-warm)) 100%);
+    
+    --shadow-soft: 0 4px 6px -1px hsl(0 0% 0% / 0.3);
+    --shadow-medium: 0 10px 15px -3px hsl(0 0% 0% / 0.3);
+    --shadow-large: 0 25px 50px -12px hsl(0 0% 0% / 0.5);
+    
+    --sidebar-background: 25 25% 8%;
+    --sidebar-foreground: 43 33% 95%;
+    --sidebar-primary: 14 73% 65%;
+    --sidebar-primary-foreground: 25 25% 8%;
+    --sidebar-accent: 25 15% 15%;
+    --sidebar-accent-foreground: 43 33% 95%;
+    --sidebar-border: 25 15% 18%;
+    --sidebar-ring: 14 73% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-warm {
+    background: var(--gradient-warm);
+  }
+  
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .shadow-large {
+    box-shadow: var(--shadow-large);
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+  
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
